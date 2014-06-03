@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost/argentinos-ll</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password"></property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        
+       <property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+        <property name="show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        <property name="use_sql_comments">true</property>
+       <!--  create : A mettre lorsqu'on va générer les tables à partir des classes
+        	 validate : pour valider les annotations qui sont dans les classes qui doivent correspondre à mes tables -->
+        <property name="hbm2ddl.auto">validate</property>
+        
+        <mapping class="pojo.Arbitre"/>
+        <mapping class="pojo.Blessures"/>
+        <mapping class="pojo.Clubs"/>
+        <mapping class="pojo.Coach"/>
+        <mapping class="pojo.CorrespondantQualifie"/>
+        <mapping class="pojo.Delegue"/>
+        <mapping class="pojo.Equipes"/>
+        <mapping class="pojo.Joueurs"/>
+        <mapping class="pojo.Lieux"/>
+        <mapping class="pojo.Matchs"/>
+        <mapping class="pojo.President"/>
+        <mapping class="pojo.Suspensions"/>
+    </session-factory>
+</hibernate-configuration>
