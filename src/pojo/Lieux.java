@@ -9,9 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -24,11 +22,7 @@ public class Lieux {
 	private Integer idLieux;
 	@Column(name = "Adresse",nullable = false,length = 100)
 	private String Adresse ;
-	@ManyToMany(fetch = FetchType.LAZY)
-	  @JoinTable(name = "se_deroule",joinColumns ={
-			  @JoinColumn(name = "idLieux",nullable = false,updatable = false) },inverseJoinColumns ={
-			  @JoinColumn(name = "idMatch",nullable = false,updatable = false)
-	  })
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "lieux")
 	private Set<Matchs> matchs = new HashSet<Matchs>(0);
 	
 	public Lieux(){	

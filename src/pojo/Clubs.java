@@ -35,7 +35,7 @@ public class Clubs {
 	   @OneToMany(fetch = FetchType.LAZY, mappedBy = "clubs")
 	  private Set<Equipes> equipes = new HashSet<Equipes>(0);
 	   @ManyToMany(fetch = FetchType.LAZY)
-		  @JoinTable(name = "dispute",joinColumns ={
+		  @JoinTable(name = "clubmatch",joinColumns ={
 				  @JoinColumn(name = "idClub",nullable = false,updatable = false) },inverseJoinColumns ={
 				  @JoinColumn(name = "idMatch",nullable = false,updatable = false)
 		  })

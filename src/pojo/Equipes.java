@@ -30,7 +30,7 @@ public class Equipes {
 	  @Column(name = "Annee",nullable = false,length = 4)
 	  private int Annee;
 	  @ManyToMany(fetch = FetchType.LAZY)
-	  @JoinTable(name = "joue",joinColumns ={
+	  @JoinTable(name = "equipematch",joinColumns ={
 			  @JoinColumn(name = "idEquipe",nullable = false,updatable = false) },inverseJoinColumns ={
 			  @JoinColumn(name = "idMatch",nullable = false,updatable = false)
 	  })
@@ -42,13 +42,13 @@ public class Equipes {
 	  })
 	  private Set<Joueurs> joueurs = new HashSet<Joueurs>(0);
 	  @ManyToMany(fetch = FetchType.LAZY)
-	  @JoinTable(name = "comporte",joinColumns ={
+	  @JoinTable(name = "equipedelegue",joinColumns ={
 			  @JoinColumn(name = "idEquipe",nullable = false,updatable = false) },inverseJoinColumns ={
 			  @JoinColumn(name = "idDelegue",nullable = false,updatable = false)
 	  })
 	  private Set<Delegue> delegue = new HashSet<Delegue>(0);
 	  @ManyToMany(fetch = FetchType.LAZY)
-	  @JoinTable(name = "est_entrainee_par",joinColumns ={
+	  @JoinTable(name = "equipecoachs",joinColumns ={
 			  @JoinColumn(name = "idEquipe",nullable = false,updatable = false) },inverseJoinColumns ={
 			  @JoinColumn(name = "idCoach",nullable = false,updatable = false)
 	  })

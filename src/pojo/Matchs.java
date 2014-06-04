@@ -38,28 +38,25 @@ public class Matchs {
 	@Column(name = "Score",nullable = true,length = 4)
 	private String Score ;
 	@ManyToMany(fetch = FetchType.LAZY)
-	  @JoinTable(name = "dispute",joinColumns ={
+	  @JoinTable(name = "clubmatch",joinColumns ={
 			  @JoinColumn(name = "idMatch",nullable = false,updatable = false) },inverseJoinColumns ={
 			  @JoinColumn(name = "idClub",nullable = false,updatable = false)
 	  })
 	private Set<Clubs> clubs = new HashSet<Clubs>(0);
-	@ManyToMany(fetch = FetchType.LAZY)
-	  @JoinTable(name = "se_deroule",joinColumns ={
-			  @JoinColumn(name = "idMatch",nullable = false,updatable = false) },inverseJoinColumns ={
-			  @JoinColumn(name = "idLieux",nullable = false,updatable = false)
-	  })
-	private Set<Lieux> lieux =  new HashSet<Lieux>(0);
+	@OneToOne(fetch = FetchType.LAZY)
+	  @JoinColumn(name = "idLieux",nullable = false)
+	private Lieux  lieux ;
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idArbitre",nullable = false)
 	private Arbitre arbitre;
 	@ManyToMany(fetch = FetchType.LAZY)
-	  @JoinTable(name = "joue",catalog = "argentinos-ll",joinColumns ={
+	  @JoinTable(name = "equipematch",catalog = "argentinos-ll",joinColumns ={
 			  @JoinColumn(name = "idMatch",nullable = false,updatable = false) },inverseJoinColumns ={
 			  @JoinColumn(name = "idEquipe",nullable = false,updatable = false)
 	  })
 	private Set<Equipes> equipes = new HashSet<Equipes>(0);
 	@ManyToMany(fetch = FetchType.LAZY)
-	  @JoinTable(name = "participe",catalog = "argentinos-ll",joinColumns ={
+	  @JoinTable(name = "joueurmatch",catalog = "argentinos-ll",joinColumns ={
 			  @JoinColumn(name = "idMatch",nullable = false,updatable = false) },inverseJoinColumns ={
 			  @JoinColumn(name = "idJoueurs",nullable = false,updatable = false)
 	  })
@@ -80,7 +77,7 @@ public class Matchs {
 		this.arbitre = arbitre;
 		
 	}
-	public Matchs(int NumeroDeMatch,Date date, String Heure, String Score,Set<Clubs> clubs ,Set<Lieux> lieux,Set<Equipes> equipes,
+	public Matchs(int NumeroDeMatch,Date date, String Heure, String Score,Set<Clubs> clubs ,Lieux lieux,Set<Equipes> equipes,
 			Set<Joueurs> joueurs,Set<Blessures> blessures,Set<Suspensions> suspensions,Arbitre arbitre){
 		this.NumeroDeMatch = NumeroDeMatch;
 		this.date = date;
@@ -131,10 +128,10 @@ public class Matchs {
 		this.clubs = clubs;
 	}
 	
-	public Set<Lieux> getLieux() {
+	public Lieux getLieux() {
 		return this.lieux;
 	}
-	public void setLieux(Set<Lieux> lieux) {
+	public void setLieux(Lieux lieux) {
 		this.lieux = lieux;
 	}
 	

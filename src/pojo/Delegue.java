@@ -30,7 +30,7 @@ public class Delegue {
 	  @Column(name = "Telephone", nullable = false, length = 15)
 	  private String Telephone ;
 	  @ManyToMany(fetch = FetchType.LAZY)
-	  @JoinTable(name = "comporte",joinColumns ={
+	  @JoinTable(name = "equipedelegue",joinColumns ={
 			  @JoinColumn(name = "idDelegue",nullable = false,updatable = false) },inverseJoinColumns ={
 			  @JoinColumn(name = "idEquipe",nullable = false,updatable = false)
 	  })

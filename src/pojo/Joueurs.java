@@ -41,7 +41,7 @@ public class Joueurs {
 	  })
 	  private Set<Equipes> equipes = new HashSet<Equipes>(0);
 	  @ManyToMany(fetch = FetchType.LAZY)
-	  @JoinTable(name = "participe",joinColumns ={
+	  @JoinTable(name = "joueurmatch",joinColumns ={
 			  @JoinColumn(name = "idJoueurs",nullable = false,updatable = false) },inverseJoinColumns ={
 			  @JoinColumn(name = "idMatch",nullable = false,updatable = false)
 	  })

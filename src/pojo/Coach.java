@@ -30,7 +30,7 @@ public class Coach {
 	 @Column(name = "AnneeDActivites",nullable = false,length = 15)
 	  private String AnneeDActivites ;
 	 @ManyToMany(fetch = FetchType.LAZY)
-	  @JoinTable(name = "est_entrainee_par",joinColumns ={
+	  @JoinTable(name = "equipecoachs",joinColumns ={
 			  @JoinColumn(name = "idCoach",nullable = false,updatable = false) },inverseJoinColumns ={
 			  @JoinColumn(name = "idEquipe",nullable = false,updatable = false)
 	  })
