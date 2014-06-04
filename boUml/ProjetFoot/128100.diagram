@@ -1,0 +1,128 @@
+format 76
+
+subject 128100 ""
+  xyzwh 287 30 2000 544 663
+classcanvas 128228 class_ref 128100 // CorrespondantQualifié
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 53 534 2000
+end
+classcanvas 128356 class_ref 128228 // Coachs
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 89 176 2000
+end
+usecasecanvas 128612 usecase_ref 128100 // Gérer données joueurs
+  xyzwh 327 528 3005 64 32 label_xy 304 560
+end
+usecasecanvas 128740 usecase_ref 128228 // Visualiser données match
+  xyzwh 381 206 3005 64 32 label_xy 350 238
+end
+usecasecanvas 128868 usecase_ref 128356 // Ajouter un joueur
+  xyzwh 430 440 3005 64 32 label_xy 421 472
+end
+usecasecanvas 128996 usecase_ref 128484 // Modifier un joueur
+  xyzwh 449 516 3005 64 32 label_xy 438 548
+end
+usecasecanvas 129124 usecase_ref 128612 // Supprimer un joueur
+  xyzwh 452 601 3005 64 32 label_xy 436 633
+end
+usecasecanvas 129252 usecase_ref 128740 // Rechercher un joueur
+  xyzwh 629 591 3005 64 32 label_xy 609 623
+end
+usecasecanvas 129380 usecase_ref 128868 // Gérer les joueurs montants
+  xyzwh 729 75 3005 64 32 label_xy 696 107
+end
+usecasecanvas 129892 usecase_ref 128996 // Modifier calendrier
+  xyzwh 336 631 3005 64 32 label_xy 324 663
+end
+usecasecanvas 130276 usecase_ref 129124 // Visualiser calendrier
+  xyzwh 388 301 3005 64 32 label_xy 371 333
+end
+usecasecanvas 130404 usecase_ref 129252 // Gérer les suspensions
+  xyzwh 726 148 3005 64 32 label_xy 703 180
+end
+usecasecanvas 130532 usecase_ref 129380 // Gérer les blessures
+  xyzwh 722 213 3005 64 32 label_xy 709 247
+end
+usecasecanvas 131940 usecase_ref 129508 // Visualiser données joueurs
+  xyzwh 385 103 3005 64 32 label_xy 351 135
+end
+note 133220 "Gestion Club"
+  xyzwh 498 34 2005 95 37
+usecasecanvas 133348 usecase_ref 129636 // S'authentifier
+  xyzwh 757 378 3011 64 32 label_xy 757 410
+end
+usecasecanvas 134244 usecase_ref 136164 // Ajouter un match
+  xyzwh 489 349 3005 64 32 label_xy 480 381
+end
+usecasecanvas 134372 usecase_ref 136292 // Modifier un match
+  xyzwh 503 411 3017 64 32 label_xy 493 443
+end
+usecasecanvas 134500 usecase_ref 136420 // Gérer données match
+  xyzwh 330 385 3005 64 32 label_xy 310 417
+end
+simplerelationcanvas 129636 simplerelation_ref 128228
+  from ref 129252 z 3006 stereotype "<<extend>>" xyz 543 609 3000 to ref 129124
+end
+simplerelationcanvas 129764 simplerelation_ref 128356
+  from ref 129252 z 3006 stereotype "<<extend>>" xyz 542 568 3000 to ref 128996
+end
+relationcanvas 130020 relation_ref 128100 // <generalisation>
+  from ref 128228 z 2001 to ref 128356
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 130916 ----
+  from ref 128356 z 3006 to ref 128740
+line 131044 ----
+  from ref 128356 z 3006 to ref 130276
+line 132196 ----
+  from ref 128228 z 3006 to ref 128612
+line 132324 ----
+  from ref 128228 z 3006 to ref 129892
+simplerelationcanvas 132452 simplerelation_ref 128740
+  from ref 128868 z 3006 to ref 128612
+end
+simplerelationcanvas 132580 simplerelation_ref 128868
+  from ref 128996 z 3006 to ref 128612
+end
+simplerelationcanvas 132708 simplerelation_ref 128996
+  from ref 129124 z 3006 to ref 128612
+end
+simplerelationcanvas 132836 simplerelation_ref 129124
+  from ref 130532 z 3006 to ref 131940
+end
+simplerelationcanvas 132964 simplerelation_ref 129252
+  from ref 130404 z 3006 to ref 131940
+end
+simplerelationcanvas 133092 simplerelation_ref 129380
+  from ref 129380 z 3006 to ref 131940
+end
+simplerelationcanvas 133476 simplerelation_ref 129508
+  from ref 131940 z 3012 stereotype "<<include>>" xyz 573 255 3000 to ref 133348
+end
+simplerelationcanvas 133604 simplerelation_ref 129636
+  from ref 128740 z 3012 stereotype "<<include>>" xyz 570 305 3000 to ref 133348
+end
+simplerelationcanvas 133732 simplerelation_ref 129764
+  from ref 130276 z 3012 stereotype "<<include>>" xyz 574 353 3000 to ref 133348
+end
+simplerelationcanvas 133860 simplerelation_ref 129892
+  from ref 128612 z 3012 stereotype "<<include>>" xyz 543 465 3000 to ref 133348
+end
+simplerelationcanvas 133988 simplerelation_ref 130020
+  from ref 129892 z 3012 stereotype "<<include>>" xyz 544 519 3000 to ref 133348
+end
+line 134116 ----
+  from ref 128356 z 3006 to ref 131940
+line 134628 ----
+  from ref 128228 z 3006 to ref 134500
+simplerelationcanvas 134756 simplerelation_ref 136548
+  from ref 134244 z 3006 to ref 134500
+end
+simplerelationcanvas 134884 simplerelation_ref 136676
+  from ref 134372 z 3018 to ref 134500
+end
+simplerelationcanvas 135012 simplerelation_ref 136804
+  from ref 134500 z 3012 stereotype "<<include>>" xyz 545 396 3000 to ref 133348
+end
+end

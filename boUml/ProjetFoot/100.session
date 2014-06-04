@@ -1,0 +1,12 @@
+window_sizes 1600 838 375 1125 729 35
+diagrams
+  active  classdiagram_ref 134628 // Diagram
+    1219 729 100 0 0 0
+end
+show_stereotypes
+selected classdiagram_ref 134628 // Diagram
+open
+  usecaseview_ref 128100 // UseCase
+  classview_ref 128100 // DiagrammeDeClasse
+end
+end
